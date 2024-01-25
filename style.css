@@ -18,6 +18,11 @@ html {
   src: url("assets/bpg_nino_mtavruli_normal.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "mtavruli-bold";
+  src: url("assets/bpg_nino_mtavruli_bold.ttf") format("truetype");
+}
+
 body {
   background-color: gray;
   margin: 0;
@@ -47,7 +52,7 @@ h1 {
 .nav-wrapper {
   display: flex;
   justify-content: space-between;
-  width: 65%;
+  width: 100rem;
 }
 
 .logo-wrapper {
@@ -100,4 +105,35 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.main-photo {
+  width: 100%;
+  object-fit: cover;
+}
+
+.main-text {
+  position: absolute;
+  top: 30%;
+  width: 100rem;
+  font-family: mtavruli-bold, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  max-height: 420px;
+}
+
+.project-name-1 {
+  font-size: 4.2rem;
+  font-weight: 900;
+}
+.project-name-2 {
+  font-size: 3.6rem;
+  font-weight: 900;
 }
