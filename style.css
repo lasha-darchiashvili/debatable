@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@font-face {
+  font-family: "arial";
+  src: url("assets/bpg_arial_2009.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "mtavruli";
+  src: url("assets/bpg_nino_mtavruli_normal.ttf") format("truetype");
+}
+
+body {
+  background-color: gray;
+  margin: 0;
+  font-family: arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #f4f4f4;
+}
+
+h1 {
+  font-size: 100px;
+}
+
+.x-icon {
+  transform: rotate(180deg);
+  margin-top: 1rem;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 8.4rem;
+  background-color: #1a1e1f;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 65%;
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.academy-wording {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: mtavruli, sans-serif;
+  margin-top: 1.5rem;
+  letter-spacing: 0.15rem;
+}
+
+.company-icon {
+  height: 4rem;
+}
+
+.navlinks-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navlink:visited,
+.navlink:link {
+  text-decoration: none;
+  color: #f4f4f4;
+  font-size: 1.4rem;
+  padding: 0 22px 0 22px;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  transition: all 0.5s;
+  display: block;
+  padding-top: 0.4rem;
+  padding-bottom: 0.41rem;
+}
+
+.navlink:hover,
+.navlink:active {
+  color: #00a3e0;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
