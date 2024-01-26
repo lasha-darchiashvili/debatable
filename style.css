@@ -3,8 +3,11 @@
   --default-white: #ffffff;
   --background-one: #1a1e1f;
   --background-two: #2b2b2b;
+  --background-three: #161616;
   --nav-blue: #00a3e0;
   --text-blue: #00aef3;
+  --dark-blue: #0080b0;
+  --border-color: #555555;
 }
 
 * {
@@ -61,7 +64,7 @@ h1 {
 .nav-wrapper {
   display: flex;
   justify-content: space-between;
-  width: 100rem;
+  width: 98rem;
 }
 
 .logo-wrapper {
@@ -124,7 +127,7 @@ h1 {
 .main-text {
   position: absolute;
   top: 30%;
-  width: 100rem;
+  width: 98rem;
   font-family: mtavruli-bold, sans-serif;
   display: flex;
   flex-direction: column;
@@ -156,7 +159,7 @@ h1 {
 }
 
 .info {
-  width: 100rem;
+  width: 98rem;
   margin-top: 5.8rem;
   margin-bottom: 5.8rem;
 }
@@ -171,4 +174,85 @@ h1 {
   font-size: 2rem;
   color: var(--text-blue);
   font-weight: 600;
+}
+
+.courses-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--background-three);
+}
+
+.courses-title-wrapper {
+  margin-top: 3.3rem;
+  font-size: 2.4rem;
+  width: 98rem;
+}
+
+.courses-cards {
+  margin-top: 6.5rem;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  row-gap: 2.3rem;
+  column-gap: 4rem;
+  margin-bottom: 5.8rem;
+}
+
+.card-img-wrapper {
+  width: 100%;
+}
+
+.card-img {
+  width: 100%;
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--background-two);
+  border-radius: 3px;
+  width: 30rem;
+}
+
+.course-name {
+  margin-top: 3.5rem;
+  font-size: 1.8rem;
+}
+
+.course-status {
+  margin-top: 2.7rem;
+  font-size: 1.4rem;
+}
+
+.course-details-wrapper {
+  margin-top: 10.3rem;
+  font-size: 1.6rem;
+  margin-bottom: 2.6rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.course-description p,
+.course-details-wrapper {
+  padding-left: 2.1rem;
+  padding-right: 1.2rem;
+  line-height: 150%;
+}
+
+.arrow-logo,
+.course-details-link {
+  display: block;
+}
+
+.course-details-link:link,
+.course-details-link:visited {
+  text-decoration: none;
+  color: var(--text-blue);
+  transition: all 0.5s;
+}
+
+.course-details-link:hover,
+.course-details-link:active {
+  color: var(--dark-blue);
 }
