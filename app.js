@@ -100,3 +100,40 @@ questions.forEach((question) => {
     }
   });
 });
+
+// terms and conditions slide
+const termsSlide = document.querySelector(".notification");
+const termsSlideOverlay = document.querySelector(".notification-overlay");
+
+document.querySelector(".rules").addEventListener("click", () => {
+  const termsCloseIcon = document.querySelector(".notification-close-icon");
+  const termsCloseButton = document.querySelector(
+    ".close-notification-second-button"
+  );
+
+  //close terms slide function
+  function closeSlide(termsSlide, termsSlideOverlay) {
+    termsSlide.style.visibility = "hidden";
+    termsSlide.style.transform = "translate(100%)";
+    termsSlideOverlay.style.width = "0";
+  }
+
+  //open terms slide
+  termsSlide.style.visibility = "visible";
+  termsSlide.style.transform = "translate(0%)";
+  termsSlideOverlay.style.width = "100%";
+
+  //close terms slide
+  termsSlideOverlay.addEventListener(
+    "click",
+    closeSlide.bind(null, termsSlide, termsSlideOverlay)
+  );
+  termsCloseIcon.addEventListener(
+    "click",
+    closeSlide.bind(null, termsSlide, termsSlideOverlay)
+  );
+  termsCloseButton.addEventListener(
+    "click",
+    closeSlide.bind(null, termsSlide, termsSlideOverlay)
+  );
+});

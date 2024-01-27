@@ -9,6 +9,12 @@
   --dark-blue: #0080b0;
   --border-color: #555555;
   --light-gray: #aaaaaa;
+  --button-blue: #57bee7;
+  --button-white: #d5d5d5;
+  --transparent-background: #222222f2;
+  --overlay: rgba(0, 0, 0, 0.5);
+  --text-gray: #8c8c8c;
+  --close-button-color: #1c1c1c;
 }
 
 * {
@@ -52,11 +58,12 @@ h1 {
 .x-icon {
   transform: rotate(180deg);
   margin-top: 1rem;
+  display: block;
 }
 
 .header {
   position: fixed;
-  z-index: 999;
+  z-index: 987;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -66,7 +73,7 @@ h1 {
 }
 
 .on-header-scroll {
-  background-color: #222222f2;
+  background-color: var(--transparent-background);
 }
 
 .header-helper {
@@ -97,6 +104,7 @@ h1 {
 
 .company-icon {
   height: 4rem;
+  display: block;
 }
 
 .navlinks-list {
@@ -286,8 +294,10 @@ h1 {
 .slider-section {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   background-color: var(--background-two);
+  position: relative;
 }
 
 .questions-section {
@@ -299,7 +309,7 @@ h1 {
 .questions-block {
   margin-top: 7.5rem;
   width: 98rem;
-  padding: 3rem 4em;
+  padding: 3rem 4rem 4rem 4rem;
   margin-bottom: 3.2rem;
 }
 
@@ -390,4 +400,176 @@ h1 {
 
 .question-arrow {
   transition: all 0s 0.5s;
+}
+
+.footer {
+  background-color: var(--background-two);
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5rem;
+}
+
+.footer-block {
+  width: 100rem;
+  margin-top: 6.3rem;
+}
+
+.footer-icons-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tbc-footer-logo {
+  height: 3rem;
+}
+
+.fb-logo,
+.youtube-logo {
+  height: 3.9rem;
+}
+
+.company-logos-wrapper {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.copyright-notice {
+  margin-top: 2rem;
+  position: relative;
+}
+
+.rights-wording {
+  font-size: 1.4rem;
+  padding-left: 1rem;
+}
+
+.rights-icon {
+  position: absolute;
+  top: 0;
+}
+
+.info-and-contact {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rules {
+  font-size: 1.4rem;
+  align-self: self-end;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.rules:hover {
+  color: var(--light-gray);
+}
+
+.contact-button {
+  padding: 1rem 3rem;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--text-blue);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.contact-button:hover {
+  background-color: var(--button-white);
+}
+
+.contact-button:hover .contact-text {
+  color: var(--background-two);
+}
+
+.contact-text {
+  color: var(--button-white);
+}
+
+.notification {
+  height: 100%;
+  width: 685px;
+  transform: translateX(100%);
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: var(--background-two);
+  font-size: 1.6rem;
+  overflow: scroll;
+  transition: all 0.5s ease;
+  z-index: 999;
+  overflow: scroll;
+  scrollbar-width: none;
+  cursor: default;
+}
+
+.notification::-webkit-scrollbar {
+  display: none;
+}
+
+.notification-overlay {
+  background-color: var(--overlay);
+  width: 0;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998;
+}
+
+.notification-close-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.notification-close-icon {
+  margin-top: 3rem;
+  margin-right: 3rem;
+  display: block;
+  cursor: pointer;
+}
+
+.notification-terms {
+  font-size: 1.4rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  color: var(--text-gray);
+}
+
+.terms-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.terms-second-titles {
+  font-size: 1.6rem;
+}
+
+.close-notification-second-button {
+  margin-top: 10.6rem;
+  margin-bottom: 2rem;
+  display: block;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 1.6rem;
+  color: var(--light-gray);
+  color: var(--close-button-color);
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 0;
+  transition: all 0.5s ease;
+}
+
+.close-notification-second-button:hover {
+  background-color: var(--text-blue);
+}
+.close-notification-second-button:hover .notification-close-text {
+  color: var(--white);
 }
