@@ -145,3 +145,45 @@ document.querySelector(".rules").addEventListener("click", () => {
     closeSlide.bind(null, termsSlide, termsSlideOverlay)
   );
 });
+
+//slider
+
+//slider
+let currentSlide = 0;
+const slideLeftArrow = document.querySelector(".slider-arrow-1");
+const slideRightArrow = document.querySelector(".slider-arrow-2");
+
+const slides = document.querySelectorAll(".slide");
+const slidesNumber = slides.length;
+
+// activate first slide
+activateSlide(currentSlide);
+
+slideRightArrow.addEventListener("click", nextSlide);
+slideLeftArrow.addEventListener("click", previousSlide);
+
+function activateSlide(curSlide) {
+  slides.forEach((slide, index) => {
+    slide.style.transform = `translateX(${100 * (index - curSlide)}%)`;
+  });
+}
+
+// goto next slide
+function nextSlide() {
+  if (currentSlide === slidesNumber - 1) {
+    currentSlide = 0;
+  } else {
+    currentSlide++;
+  }
+  activateSlide(currentSlide);
+}
+
+//goto previous slide
+function previousSlide() {
+  if (currentSlide === 0) {
+    currentSlide = slidesNumber - 1;
+  } else {
+    currentSlide--;
+  }
+  activateSlide(currentSlide);
+}
