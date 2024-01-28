@@ -18,12 +18,6 @@ TBC website project, build specifically for TBC academy course. Application is b
 - HTML 5
 - JavaScript ES3
 
-#
-
-### Tech Stack
-
-- React
-- Tailwind UI for styling.
 
 #
 
