@@ -11,6 +11,15 @@ window.addEventListener("scroll", function () {
   }
 });
 
+// burger menu
+
+const burgerMenu = document.querySelector(".burger-menu");
+const navMenu = document.querySelector(".nav");
+burgerMenu.addEventListener("click", () => {
+  navMenu.classList.toggle("burger-active");
+  console.log(navMenu.classList);
+});
+
 console.log(cardsData);
 
 //Card components. Taking data from data.js and creating card component for each object
