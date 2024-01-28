@@ -314,9 +314,6 @@ h1 {
 }
 
 .questions-header {
-}
-
-.questions-header {
   display: flex;
   justify-content: space-between;
 }
@@ -348,6 +345,7 @@ h1 {
 
 .question-item {
   border-bottom: 1px solid var(--border-color);
+  position: relative;
 }
 
 .question {
@@ -355,22 +353,62 @@ h1 {
   padding: 3rem 0;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .answer-container {
-  max-height: 0;
+  display: grid;
+  grid-template-rows: 0fr;
   overflow: hidden;
   transition: all 0.5s ease;
+  pointer-events: none;
 }
 
-.questions-container.active .answer-container {
-  height: fit-content;
+.answer,
+.answer-title,
+.answer-content,
+.answer-content p,
+.answer-footer {
+  overflow: hidden;
+}
+
+.answer-helper {
+  height: 2rem;
+}
+
+.question.active .answer-container {
+  grid-template-rows: 1fr;
+}
+/* 
+.question-item.active .answer {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+} */
+
+.question-item::before {
+  content: url(assets/down-arrow.svg);
+  font-weight: 600;
+  position: absolute;
+  right: 0;
+  top: 0;
+  top: 3rem;
+  right: 0.5rem;
+}
+
+.question-item.active::before {
+  content: url(assets/up-arrow.svg);
+  font-weight: 600;
+  position: absolute;
+  right: 0;
+  top: 0;
+  top: 3rem;
+  right: 0.5rem;
 }
 
 .answer {
   font-size: 1.4rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  /* margin-top: 2rem;
+  margin-bottom: 2rem; */
   line-height: 180%;
 }
 
@@ -397,10 +435,10 @@ h1 {
 .rotate {
   transform: rotate(180deg);
 }
-
+/* 
 .question-arrow {
-  transition: all 0s 0.5s;
-}
+  transition: all 0s 0.2s;
+} */
 
 .footer {
   background-color: var(--background-two);
@@ -549,6 +587,7 @@ h1 {
 
 .terms-second-titles {
   font-size: 1.6rem;
+  font-weight: 700;
 }
 
 .close-notification-second-button {
@@ -572,4 +611,15 @@ h1 {
 }
 .close-notification-second-button:hover .notification-close-text {
   color: var(--white);
+}
+
+.tbc-website-link:link,
+.tbc-website-link:visited {
+  color: var(--text-gray);
+}
+
+.itacademy-text {
+  cursor: pointer;
+  color: var(--text-gray);
+  text-decoration: none;
 }

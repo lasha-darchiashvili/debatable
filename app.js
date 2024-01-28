@@ -13,7 +13,7 @@ window.addEventListener("scroll", function () {
 
 console.log(cardsData);
 
-// Taking data from data.js and creating card component for each object
+//Card components. Taking data from data.js and creating card component for each object
 const cardContainer = document.querySelector(".courses-cards");
 console.log(cardContainer);
 cardsData.forEach((data) => {
@@ -81,27 +81,25 @@ questions.forEach((question) => {
     allQuestionItems.forEach((item) => {
       if (item !== questionItem) {
         const answer = item.querySelector(".answer-container");
-        answer.style.maxHeight = "0px";
+        answer.style.gridTemplateRows = "0fr";
       }
     });
 
     // Toggle the answer for the clicked question item and rotate arrow icon
     const answer = questionItem.querySelector(".answer-container");
-    const downArrowIcon = questionItem.querySelector(".question-arrow");
-
-    if (getComputedStyle(answer).maxHeight === "0px") {
-      answer.style.maxHeight = "1000px";
-
+    console.log(getComputedStyle(answer).gridTemplateRows);
+    if (getComputedStyle(answer).gridTemplateRows === "0px") {
+      answer.style.gridTemplateRows = "1fr";
+      questionItem.classList.add("active");
       console.log("asdasd");
-      downArrowIcon.classList.toggle("rotate");
     } else {
-      answer.style.maxHeight = "0px";
-      downArrowIcon.classList.toggle("rotate");
+      answer.style.gridTemplateRows = "0fr";
+      questionItem.classList.remove("active");
     }
   });
 });
 
-// terms and conditions slide
+// terms and conditions slide component
 const termsSlide = document.querySelector(".notification");
 const termsSlideOverlay = document.querySelector(".notification-overlay");
 
@@ -111,19 +109,20 @@ document.querySelector(".rules").addEventListener("click", () => {
     ".close-notification-second-button"
   );
 
-  //close terms slide function
-  function closeSlide(termsSlide, termsSlideOverlay) {
-    termsSlide.style.visibility = "hidden";
-    termsSlide.style.transform = "translate(100%)";
-    termsSlideOverlay.style.width = "0";
-  }
-
   //open terms slide
   termsSlide.style.visibility = "visible";
   termsSlide.style.transform = "translate(0%)";
   termsSlideOverlay.style.width = "100%";
 
-  //close terms slide
+  //function: close terms and conditions and scroll to bottom
+  function closeSlide(termsSlide, termsSlideOverlay) {
+    termsSlide.style.visibility = "hidden";
+    termsSlide.style.transform = "translate(100%)";
+    termsSlideOverlay.style.width = "0";
+    window.scrollTo({ top: document.body.scrollHeight });
+  }
+
+  //close terms slide with three different elements
   termsSlideOverlay.addEventListener(
     "click",
     closeSlide.bind(null, termsSlide, termsSlideOverlay)
